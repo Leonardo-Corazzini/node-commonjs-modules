@@ -6,6 +6,6 @@ function userName (firstName,lastName){
     return user  
     }
 
-console.log(userName('leonardo','dhauid'))
+// console.log(userName('leonardo','dhauid'))
 
 module.exports = userName
