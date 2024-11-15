@@ -1,9 +1,20 @@
 const userName = require("./name.js")
 const hobby = require("./hobbies.js")
 
-function people(){
-    const {firstName,lastName} = userName(process.argv[2],process.argv[3])
-    const {hobbies} = hobby(process.argv[4],process.argv[5],process.argv[6])
+const userParams = {
+    name: process.argv[2],
+    surname : process.argv[3],
+    hobby1 : process.argv[4],
+    hobby2: process.argv[5],
+    hobby3: process.argv[6]
+
+}
+
+ const {name, surname, hobby1 , hobby2 , hobby3} = userParams
+
+function people(name = 'Mario', surname = 'Rossi' , hobby1 = '', hobby2 = '' , hobby3 = ''){
+    const {firstName,lastName} = userName(name,surname,)
+    const {hobbies} = hobby(hobby1,hobby2,hobby3)
     const person = {
         firstName ,
         lastName,
@@ -12,4 +23,4 @@ function people(){
     return person
 }
 
-console.log(people())
+console.log(people(name,surname,hobby1,hobby2,hobby3))
